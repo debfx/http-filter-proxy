@@ -82,7 +82,6 @@ func main() {
 		fmt.Printf("failed to listen on port %s: %v\n", *listenTCP, err)
 		os.Exit(1)
 	}
-	defer tcpListener.Close()
 
 	_, err = systemdDaemon.SdNotify(false, systemdDaemon.SdNotifyReady)
 	if err != nil {
