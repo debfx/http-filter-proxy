@@ -20,7 +20,7 @@ import (
 	flag "github.com/spf13/pflag"
 )
 
-var allowedHostGlobs []glob.Glob
+var allowedHostGlobs []*glob.Pattern
 
 func isHostAllowed(hostname string) bool {
 	hostnameWithoutPort := strings.Split(hostname, ":")[0]
